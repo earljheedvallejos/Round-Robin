@@ -1,0 +1,103 @@
+import java.util.*;
+
+public class main {
+    public static void main(String[] args) {  
+   CRR P1 = new CRR( 1 , " 4 "); 
+   CRR P2 = new CRR( 2 , " 8 ");
+   CRR P3 = new CRR( 3 , " 3 ");   
+   CRR P4 = new CRR( 4 , " 2 ");         
+   CRR P5 = new CRR( 5 , " 6 ");
+        LinkedList<CRR> roundrobin = new LinkedList<>();
+                    roundrobin.add(P1);
+                    roundrobin.add(P2);
+              			roundrobin.add(P3);
+       					    roundrobin.add(P4);
+       							roundrobin.add(P5);
+        		Iterator i = roundrobin.iterator();
+        System.out.printf("Round 1");        
+        while(i.hasNext()){
+            System.out.print(i.next());
+        }   
+     //ROUND 2 of a game
+     CRR P12 = new CRR( 1 , " 7 ");
+     CRR P22 = new CRR( 2 , " 10 ");
+     CRR P32 = new CRR( 3 , " 8 ");
+     CRR P42 = new CRR( 4 , " 7 ");
+     CRR P52 = new CRR( 5 , " 9 ");
+     LinkedList<CRR> roundrobin2 = new LinkedList<>();
+     roundrobin2.add(P12);
+     roundrobin2.add(P22);
+     roundrobin2.add(P32);
+     roundrobin2.add(P42);
+     roundrobin2.add(P52);
+     Iterator j = roundrobin2.iterator();
+            System.out.println(" \n");
+     System.out.print("Round 2");
+     while(j.hasNext()){
+         System.out.print(j.next());
+     }
+    //ROUND 3 of a game
+        CRR P13 = new CRR( 1 , " 10 ");
+        CRR P23 = new CRR( 2 , " Winner 1 ");
+        CRR P33 = new CRR( 3 , " winner 2 ");
+    	  CRR P43 = new CRR( 4 , " 9");
+        CRR P53 = new CRR( 5 , " 9 ");
+    LinkedList<CRR> roundrobin3 = new LinkedList<>();
+    roundrobin3.add(P23);
+    roundrobin3.add(P33); 
+    roundrobin3.add(P13); 
+    roundrobin3.add(P43);   
+    roundrobin3.add(P53);
+    Iterator k = roundrobin3.iterator();   
+    System.out.println(" \n");    
+    System.out.print("Round 3");
+    while(k.hasNext()){
+        System.out.print(k.next());
+    }
+    //ROUND 4 of a game 
+    CRR P14 = new CRR( 1 , " Winner 3 \"Not bad for a blind man\"");
+    CRR P24 = new CRR( 2 , " Winner 1 \"Bunch of LLLLLLLLs\" ");
+    CRR P34 = new CRR( 3 , " winner 2 \"He’s got lucky\"");
+    CRR P44 = new CRR( 4 , " Winner 4 \"I’ll win next game\"");
+    CRR P54 = new CRR( 5 , " Winner 5 \"I can’t take this\" ");
+    LinkedList<CRR> roundrobin4 = new LinkedList<>();
+ roundrobin4.add(P24);
+ roundrobin4.add(P34);  
+ roundrobin4.add(P14);  
+ roundrobin4.add(P44);   
+ roundrobin4.add(P54);
+      Iterator l = roundrobin4.iterator(); 
+    while(l.hasNext()){ 
+        System.out.print(l.next());
+    }
+    }
+}
+public class CRR{
+/**
+ * LinkedlistCRR
+ */
+    private int i;
+    private String  score;
+    public CRR(int i, String score){      
+        this.i  = i;
+        this.score = score;       
+    }    
+    //player
+    public int geti(){
+        return i;  
+        }   
+        public void seti(int i){   
+            this.i=i;        
+        }   
+    //score
+        public String getscore(){
+            return score;        
+            }        
+            public void setscore(String score){        
+                this.score=score;            
+            }          
+public String toString(){
+    return "\nPlayer"  + i + ": " + score;
+
+}
+}
